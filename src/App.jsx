@@ -1,10 +1,15 @@
 import { Header } from "./components/Header";
+import { Section } from "./components/Section/Section";
+
 import "./App.css";
 
 function App() {
   return (
     <>
-      <Header title="Tab2Score" show={true} />
+      <body>
+        <Header title="Tab2Score" show={true} />
+        <Section />
+      </body>
     </>
   );
 }

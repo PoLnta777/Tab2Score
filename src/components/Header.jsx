@@ -1,12 +1,11 @@
 import "./Header.css";
 
-export const Header = ({ children, title, show }) => {
+export const Header = ({ title, show }) => {
   return (
     <header className="header">
-      <h1 className="title">{title || "titulo por defecto"}</h1>
-      {children}
+      <h1 className="title">{title}</h1>
 
-      {show && <p>Este Texto</p>}
+      {show && <p>IA de conversión de Music Sheet a Tab y viceversa</p>}
     </header>
   );
 };
