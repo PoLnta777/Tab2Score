@@ -1,5 +1,5 @@
 import { Header } from "./components/Header";
-import { Section } from "./components/Section/Section";
+import { Form } from "./components/Form/Form";
 
 import "./App.css";
 
@@ -8,7 +8,7 @@ function App() {
     <>
       <body>
         <Header title="Tab2Score" show={true} />
-        <Section />
+        <Form />
       </body>
     </>
   );
