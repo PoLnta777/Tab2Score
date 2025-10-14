@@ -1,14 +1,9 @@
 .header {
   padding: 24px;
-  background: radial-gradient(
-    circle at center,
-    #2daab3 0%,
-    #3cc0b2 20%,
-    #56d8ba 40%,
-    #6ef0c8 60%,
-    #5ad7e0 80%,
-    #41bbd0 100%
-  );
+  background: linear-gradient(90deg, #2daab3, #3cc0b2);
+  color: white;
+
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   border-radius: 20px;
   text-align: center;
   margin: 10px;

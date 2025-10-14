@@ -42,5 +42,7 @@
 }
 
 body {
-  background: radial-gradient(circle at center, #279199 0%, #2d9187 50%);
+  background: #43cea2;
+  background: -webkit-linear-gradient(to bottom, #185a9d, #43cea2);
+  background: linear-gradient(to bottom, #185a9d, #43cea2);
 }
