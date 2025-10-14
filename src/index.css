@@ -1,3 +1,14 @@
+@font-face {
+  font-family: "Kelvetica";
+  src: url("/public/Fonts/KelveticaNobis-A5z6.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: "Kelvetica", system-ui, sans-serif;
+}
+
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;

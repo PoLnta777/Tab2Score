@@ -13,60 +13,94 @@
   margin: 10px;
 }
 
-.input-section {
-  margin: 15px 0;
+/* Cada sección (archivo, URL, instrumento) */
+.input-box {
+  background: linear-gradient(145deg, #3cc0b2, #2daab3);
+
+  border-radius: 20px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
+.input-box:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
+}
+
+.input-box p,
+.input-box label {
+  font-weight: 600;
+  background: #2eafa2;
+  color: white;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+/* Botón para subir archivo */
 .file-button {
   background: #2eafa2;
   color: white;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   border: none;
   border-radius: 20px;
-  padding: 15px 40px;
+  padding: 12px 30px;
   cursor: pointer;
+  transition: background 0.2s ease;
 }
+
 .file-button:hover {
   background: #289c91;
 }
 
+/* Inputs de URL e instrumento */
 .url-input,
 .instrument-input {
-  background: #ccc;
+  background: #e1f5f3;
   padding: 10px;
   border-radius: 15px;
   border: 1px solid #afafaf;
   width: 70%;
   text-align: center;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
-.row {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
+.url-input:focus,
+.instrument-input:focus {
+  border-color: #2eafa2;
+  box-shadow: 0 0 8px rgba(46, 175, 162, 0.5);
 }
 
-.instrument-box {
-  flex: 1;
-  margin-right: 20px;
-}
-
+/* Botón principal */
 .create-button {
+  display: block;
+  margin: 0 auto;
   background: #2eafa2;
   color: white;
   border: none;
-  padding: 15px 25px;
+  padding: 15px 35px;
   font-size: 1.2rem;
-  border-radius: 10px;
+  border-radius: 12px;
   cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: background 0.2s ease, transform 0.2s ease;
 }
+
 .create-button:hover {
   background: #289c91;
+  transform: translateY(-2px);
 }
+
+/* Resultado opcional */
 .result-section {
   margin-top: 20px;
+  text-align: center;
 }
+
 .result-section p {
   font-size: 1.2rem;
   font-weight: bold;
+  color: #003434;
 }

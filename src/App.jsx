@@ -1,5 +1,5 @@
-import { Header } from "./components/Header";
-import { Form } from "./components/Form/Form";
+import { Header } from "../src/components/Header/Header";
+import { Form } from "../src/components/Form/Form";
 
 import "./App.css";
 

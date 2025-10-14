@@ -7,70 +7,98 @@ export const Form = () => {
   const [instrument, setInstrument] = useState("");
 
   const handleCreate = () => {
-    // Validación: URL e Instrumento deben ir juntos o estar vacíos
     const urlFilled = url.trim() !== "";
     const instrumentFilled = instrument.trim() !== "";
 
-    if (urlFilled !== instrumentFilled) {
+    // 🔒 1. Si sube archivo, no debe haber URL ni instrumento
+    if (file && (urlFilled || instrumentFilled)) {
       alert(
-        "Debes completar ambos campos: URL e Instrumento, o dejarlos vacíos."
+        "No puedes subir archivo y completar URL/instrumento al mismo tiempo."
       );
       return;
     }
 
-    // Al menos uno de los datos (archivo o URL+Instrumento) debe existir
-    if (!file && !urlFilled) {
+    // 🔒 2. Si usa URL/instrumento, deben estar ambos completos
+    if (!file && urlFilled !== instrumentFilled) {
+      alert(
+        "Debes completar ambos campos: URL e Instrumento, o dejar ambos vacíos."
+      );
+      return;
+    }
+
+    // 🔒 3. Si no hay nada cargado
+    if (!file && !urlFilled && !instrumentFilled) {
       alert("Debes subir un archivo o completar URL e Instrumento.");
       return;
     }
 
-    // Mostrar datos en consola
-    console.log("Archivo:", file);
-    console.log("URL:", url);
-    console.log("Instrumento:", instrument);
+    // ✅ 4. Si todo está bien
+    if (file) {
+      console.log("Modo archivo");
+      console.log("Archivo:", file);
+    } else {
+      console.log("Modo URL + instrumento");
+      console.log("URL:", url);
+      console.log("Instrumento:", instrument);
+    }
+
     alert("Datos enviados correctamente. Revisa la consola.");
+
+    // 🧹 Limpieza de campos
+    setFile(null);
+    setUrl("");
+    setInstrument("");
   };
 
   return (
     <div className="form-container">
-      {/* Subida de archivo */}
-      <div className="input-section">
-        <p>Ingresa Tab o Partitura</p>
-        <label className="file-button">
-          Archivo
+      {/* MÉTODO 1 - Subir archivo */}
+      <div className="method-section">
+        <h2>🎵 Ingresar Tab o Partitura (archivo)</h2>
+        <div className="input-box">
+          <label className="file-button" htmlFor="fileInput">
+            Subir archivo
+          </label>
           <input
+            id="fileInput"
             type="file"
             style={{ display: "none" }}
             onChange={(e) => setFile(e.target.files[0])}
           />
-        </label>
-        {file && <p>Archivo seleccionado: {file.name}</p>}
+          {file && <p>Archivo seleccionado: {file.name}</p>}
+        </div>
       </div>
 
-      {/* URL + Instrumento */}
-      <div className="input-section">
-        <p>Escribe URL de la Tab o la Partitura</p>
-        <input
-          type="text"
-          placeholder="URL"
-          className="url-input"
-          value={url}
-          onChange={(e) => setUrl(e.target.value)}
-        />
+      {/* SEPARADOR */}
+      <div className="separator">
+        <span>o</span>
       </div>
 
-      <div className="input-section row">
-        <div className="instrument-box">
-          <label>Instrumento</label>
+      {/* MÉTODO 2 - URL + instrumento */}
+      <div className="method-section">
+        <h2>🌐 Ingresar por URL e instrumento</h2>
+
+        <div className="input-box">
           <input
             type="text"
-            placeholder="Ej: Órgano [Nombre]"
+            placeholder="URL de la tab o partitura"
+            className="url-input"
+            value={url}
+            onChange={(e) => setUrl(e.target.value)}
+          />
+        </div>
+
+        <div className="input-box">
+          <input
+            type="text"
+            placeholder="Instrumento (Ej: Guitarra Eléctrica)"
             className="instrument-input"
             value={instrument}
             onChange={(e) => setInstrument(e.target.value)}
           />
         </div>
-        <button className="create-button" onClick={handleCreate}>
+
+        <button type="button" className="create-button" onClick={handleCreate}>
           Crear
         </button>
       </div>
