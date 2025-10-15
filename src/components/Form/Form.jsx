@@ -10,7 +10,7 @@ export const Form = () => {
     const urlFilled = url.trim() !== "";
     const instrumentFilled = instrument.trim() !== "";
 
-    // 🔒 1. Si sube archivo, no debe haber URL ni instrumento
+    // Si sube archivo, no debe haber URL ni instrumento
     if (file && (urlFilled || instrumentFilled)) {
       alert(
         "No puedes subir archivo y completar URL/instrumento al mismo tiempo."
@@ -18,7 +18,7 @@ export const Form = () => {
       return;
     }
 
-    // 🔒 2. Si usa URL/instrumento, deben estar ambos completos
+    // Si usa URL/instrumento, deben estar ambos completos
     if (!file && urlFilled !== instrumentFilled) {
       alert(
         "Debes completar ambos campos: URL e Instrumento, o dejar ambos vacíos."
@@ -26,13 +26,13 @@ export const Form = () => {
       return;
     }
 
-    // 🔒 3. Si no hay nada cargado
+    //  Si no hay nada cargado
     if (!file && !urlFilled && !instrumentFilled) {
       alert("Debes subir un archivo o completar URL e Instrumento.");
       return;
     }
 
-    // ✅ 4. Si todo está bien
+    //  Si todo esta bien
     if (file) {
       console.log("Modo archivo");
       console.log("Archivo:", file);
@@ -44,7 +44,7 @@ export const Form = () => {
 
     alert("Datos enviados correctamente. Revisa la consola.");
 
-    // 🧹 Limpieza de campos
+    // Limpieza de campos
     setFile(null);
     setUrl("");
     setInstrument("");
@@ -52,9 +52,9 @@ export const Form = () => {
 
   return (
     <div className="form-container">
-      {/* MÉTODO 1 - Subir archivo */}
+      {/* METODO 1 - Subir archivo */}
       <div className="method-section">
-        <h2>🎵 Ingresar Tab o Partitura (archivo)</h2>
+        <h2>🎵 Ingresar Tab o Partitura</h2>
         <div className="input-box">
           <label className="file-button" htmlFor="fileInput">
             Subir archivo
@@ -71,12 +71,12 @@ export const Form = () => {
 
       {/* SEPARADOR */}
       <div className="separator">
-        <span>o</span>
+        <span>O</span>
       </div>
 
-      {/* MÉTODO 2 - URL + instrumento */}
+      {/* METODO 2 - URL + instrumento */}
       <div className="method-section">
-        <h2>🌐 Ingresar por URL e instrumento</h2>
+        <h2>🌐 Ingresar URL e instrumento deseado</h2>
 
         <div className="input-box">
           <input
@@ -91,7 +91,7 @@ export const Form = () => {
         <div className="input-box">
           <input
             type="text"
-            placeholder="Instrumento (Ej: Guitarra Eléctrica)"
+            placeholder="Instrumento"
             className="instrument-input"
             value={instrument}
             onChange={(e) => setInstrument(e.target.value)}

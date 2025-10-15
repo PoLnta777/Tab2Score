@@ -7,7 +7,7 @@ export const Header = ({ title, show }) => {
 
       {show && (
         <p className="subtitle">
-          IA de conversión de Music Sheet a Tab y viceversa DEMO
+          IA de conversión de Partitura a Tab y viceversa DEMO
         </p>
       )}
     </header>

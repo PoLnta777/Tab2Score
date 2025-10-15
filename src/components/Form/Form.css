@@ -9,7 +9,7 @@
   margin: 10px;
 }
 
-/* Cada sección (archivo, URL, instrumento) */
+/* Cada seccion (archivo - URL - instrumento) */
 .input-box {
   background: linear-gradient(145deg, #3cc0b2, #2daab3);
 
@@ -34,7 +34,7 @@
   margin-bottom: 10px;
 }
 
-/* Botón para subir archivo */
+/* Boton para subir archivo */
 .file-button {
   background: #2eafa2;
   color: white;
@@ -56,6 +56,7 @@
   background: #e1f5f3;
   padding: 10px;
   border-radius: 15px;
+  color: gray;
   border: 1px solid #afafaf;
   width: 70%;
   text-align: center;
@@ -69,7 +70,7 @@
   box-shadow: 0 0 8px rgba(46, 175, 162, 0.5);
 }
 
-/* Botón principal */
+/* Boton principal */
 .create-button {
   display: block;
   margin: 0 auto;

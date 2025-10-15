@@ -8,12 +8,10 @@ import "./App.css";
 function App() {
   return (
     <>
-      <body>
-        <BackgroundLogos />
-        <Navbar />
-        <Header title="Tab2Score" show={true} />
-        <Form />
-      </body>
+      <BackgroundLogos />
+      <Navbar />
+      <Header title="Tab2Score" show={true} />
+      <Form />
     </>
   );
 }
